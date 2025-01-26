@@ -10,6 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
     <link rel="stylesheet" href="css/utilities.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Edge Ledger | Welcome</title>
@@ -118,20 +119,68 @@
         </header>
         <div class="row">
           <div class="column">
-            <img src="img/cases/cases1.jpg" alt="Cases 1" />
-            <img src="img/cases/cases2.jpg" alt="Cases 2" />
+            <a
+              href="img/cases/cases1.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases1.jpg" alt="Cases 1" />
+            </a>
+            <a
+              href="img/cases/cases2.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases2.jpg" alt="Cases 1" />
+            </a>
           </div>
           <div class="column">
-            <img src="img/cases/cases3.jpg" alt="Cases 3" />
-            <img src="img/cases/cases4.jpg" alt="Cases 4" />
+            <a
+              href="img/cases/cases3.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases3.jpg" alt="Cases 1" />
+            </a>
+            <a
+              href="img/cases/cases4.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases4.jpg" alt="Cases 1" />
+            </a>
           </div>
           <div class="column">
-            <img src="img/cases/cases5.jpg" alt="Cases 5" />
-            <img src="img/cases/cases6.jpg" alt="Cases 6" />
+            <a
+              href="img/cases/cases5.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases5.jpg" alt="Cases 1" />
+            </a>
+            <a
+              href="img/cases/cases6.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases6.jpg" alt="Cases 1" />
+            </a>
           </div>
           <div class="column">
-            <img src="img/cases/cases7.jpg" alt="Cases 7" />
-            <img src="img/cases/cases8.jpg" alt="Cases 8" />
+            <a
+              href="img/cases/cases7.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases7.jpg" alt="Cases 1" />
+            </a>
+            <a
+              href="img/cases/cases8.jpg"
+              data-lightbox="cases"
+              data-title="Lorem ipsum, dolor sit amet consectetur adipisicing elit"
+            >
+              <img src="img/cases/cases8.jpg" alt="Cases 1" />
+            </a>
           </div>
         </div>
       </section>
@@ -242,6 +291,14 @@
       <p>&copy; 2022 Edge Ledger. All rights reserved.</p>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/lightbox.min.js"></script>
+
     <script>
       const navbar = document.getElementById('navbar');
       let scrolled = false;
@@ -261,6 +318,22 @@
           scrolled = false;
         }
       };
+
+      // Smooth scrolling
+      $('#navbar a, .btn').on('click', function (e) {
+        if (this.hash !== '') {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+      });
     </script>
   </body>
 </html>
